@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #root{
+            position: absolute;
+            width:500px;
+            height: 500px;
+            left:50%;
+            transform: translateX(-50%);
+            background-color: #000;
+        }
+    </style>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="root"></div>
+    <button class="moveDown">向下移动</button>
+    <button class="moveOut">删除</button>
+    <button class="moveAdd">恢复</button>
 </body>
 </html>
