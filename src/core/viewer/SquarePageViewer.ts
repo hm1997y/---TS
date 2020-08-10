@@ -35,7 +35,7 @@ export class SquarePageViewer implements IViewer{
         private square:Square,
         private container:JQuery<HTMLElement>
     ){
-
+        
     }
 
 }
