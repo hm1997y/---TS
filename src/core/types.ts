@@ -7,3 +7,9 @@ export interface IViewer{
     remove():void
 }
 export type Shape = Point[]
+export type Test = string
+export enum MoveDirection{
+    Left ,
+    Right,
+    Down
+}
