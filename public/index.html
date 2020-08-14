@@ -6,21 +6,41 @@
     <title>Document</title>
     <style>
         #root{
-            position: absolute;
-            width:300px;
-            height: 300px;
+            display: flex;
+            justify-content: center;
+
+            /* position: absolute;
+            
             left:50%;
             transform: translateX(-50%);
-            background-color: #000;
+            background-color: #000; */
+        }
+        #panel{
+            position: relative;
+            width:300px;
+            height: 300px;
+            background-color: #000; 
+        }
+        #tip{
+            position: relative;
+            width:120px;
+            height:120px;
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <div id="panel"></div>
+        <div id="tip">
+            <div id="next"></div>
+        </div>
+    </div>
     <button class="moveDown">向下移动</button>
     <button class="moveLeft">向左移动</button>
     <button class="moveRight">向右移动</button>
     <button class="moveUp">向上移动</button>
     <button class="rotate">旋转</button>
+    <button class="startBtn">开始</button>
+    <button class="pauseBtn">暂停</button>
 </body>
 </html>

@@ -10,6 +10,8 @@ import { SquareGroup } from "./core/viewer/SquareGrap";
 import { createTeris } from "./core/viewer/Teris";
 import { TerisRule } from "./core/viewer/TerisRule";
 import { MoveDirection } from "./core/types";
+import { Game } from "./core/viewer/Game";
+import { GamePageViewer } from "./core/viewer/GamePageViewer";
 //     }
 //     show(): void {
 //        console.log(this.square.point, this.square.color)
@@ -46,7 +48,7 @@ import { MoveDirection } from "./core/types";
 //     if(sq.viewer){
 //         sq.viewer.remove()
 //     }
-   
+
 // })
 // $('.moveAdd').click(function(){
 //     sq.viewer = new SquarePageViewer(sq, $('#root'))
@@ -64,34 +66,44 @@ import { MoveDirection } from "./core/types";
 // })
 // import {Test} from './core/types'
 // const t:Test = 'safdf'
-const group = createTeris({x:3,y:4})
-group.squares.forEach(sq=>{
-    sq.viewer = new SquarePageViewer(sq, $('#root'))
+// const group = createTeris({x:3,y:4})
+// group.squares.forEach(sq=>{
+//     sq.viewer = new SquarePageViewer(sq, $('#root'))
+// })
+// $('.moveDown').click(function(){
+//     const targetPoint = {
+//         x:group.centerPoint.x,
+//         y:group.centerPoint.y + 1
+//     }
+
+//     // if(TerisRule.canIMove(group.shape,targetPoint)){
+//     //     group.centerPoint = targetPoint
+//     // }
+//     TerisRule.moveDirectly(group, MoveDirection.Down)
+
+// })
+// $('.moveUp').click(function(){
+//     group.centerPoint = {
+//         x:group.centerPoint.x,
+//         y:group.centerPoint.y - 1
+//     }
+// })
+// $('.moveLeft').click(function(){
+//    TerisRule.move(group,{x:group.centerPoint.x - 1,y:group.centerPoint.y})
+// })
+// $('.moveRight').click(function(){
+//    TerisRule.move(group,MoveDirection.Right)
+// })
+// $('.rotate').click(function(){
+//     group.rotate()
+// })
+
+var g = new Game(new GamePageViewer())
+
+$('.startBtn').click(function () {
+    console.log(1)
+    g.start()
 })
-$('.moveDown').click(function(){
-    const targetPoint = {
-        x:group.centerPoint.x,
-        y:group.centerPoint.y + 1
-    }
-   
-    // if(TerisRule.canIMove(group.shape,targetPoint)){
-    //     group.centerPoint = targetPoint
-    // }
-    TerisRule.moveDirectly(group, MoveDirection.Down)
-   
-})
-$('.moveUp').click(function(){
-    group.centerPoint = {
-        x:group.centerPoint.x,
-        y:group.centerPoint.y - 1
-    }
-})
-$('.moveLeft').click(function(){
-   TerisRule.move(group,{x:group.centerPoint.x - 1,y:group.centerPoint.y})
-})
-$('.moveRight').click(function(){
-   TerisRule.move(group,MoveDirection.Right)
-})
-$('.rotate').click(function(){
-    group.rotate()
+$('.pauseBtn').click(function () {
+    g.pause()
 })
